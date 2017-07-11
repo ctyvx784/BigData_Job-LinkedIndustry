@@ -1,1 +1,1 @@
-# BigData_Job-LinkedIndustry
+# 빅데이터 일자리 연계 사업 실습 파일
