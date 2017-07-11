@@ -1,67 +1,71 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
-</head>
 <%
-   String num = request.getParameter("num");
-   String name = request.getParameter("name");
-   String gender = request.getParameter("gender");
-   String color = request.getParameter("color");
-   String url = request.getParameter("url");
-   
-   out.print(num + "<br>");
-   out.print(name + "<br>");
-   out.print(gender + "<br>");
-   out.print(color + "<br>");
-   out.print(url + "<br>");
-   out.print("<table border = '1'><tr>");
-   out.print("<th> í•™ë²ˆ </th>");
-   out.print("<td>"+ num + " </td>");
-   out.print("</tr>");
-   out.print("<tr>");
-   out.print("<th> ì´ë¦„ </th>");
-   out.print("<td>"+ name + " </td>");
-   out.print("</tr>");
-   out.print("<tr>");
-   out.print("<th> ì„±ë³„ </th>");
-   out.print("<td>"+ gender + " </td>");
-   out.print("</tr>");
-   out.print("<tr>");
-   out.print("<th> ìƒ‰ìƒ </th>");
-   out.print("<td>"+ color + " </td>");
-   out.print("</tr>");
-   out.print("<tr>");
-   out.print("<th> URL </th>");
-   out.print("<td>"+ url + " </td>");
-   out.print("</tr>");
-   out.print("</table>");   
+String color = request.getParameter("Bcolor");
 %>
 
-<body bgcolor = "<% out.print(color); %>">
-<table border="1">
-<tr>
-   <th> í•™ë²ˆ : </th>
-   <td><% out.print(num); %></td>
-</tr>
-<tr>
-   <th> ì´ë¦„ : </th>
-   <td> <a href = "<%= url %>"><%out.print(name); %></a> </td>
-</tr>
-<tr>
-   <th> ì„±ë³„ : </th>
-   <td><%out.print(gender);%></td>
-</tr>
-<tr>
-   <th> ìƒ‰ìƒ : </th>
-   <td><% out.print(color); %></td>
-</tr>
-<tr>
-   <th> URL : </th>
-   <td><% out.print(url); %></td>
-</tr>
+<title>Insert title here</title>
+</head >
+<body bgcolor="<% out.print(color); %>">
+
+ 
+
+<%	
+
+	//¿äÃ» ÆÄ¶ó¹ÌÅÍ¸¦ ¹Ş´Â °Í. htmlºÎºĞ°ú ÀÏÄ¡µÇ¾ßÇÑ´Ù.
+	//¹İÈ¯ÇüÀÌ StringÀÌ´Ù.
+	String num = request.getParameter("num");
+	String name = request.getParameter("name");
+	String gender = request.getParameter("gender");
+	String url = request.getParameter("url");
+	
+	/*
+	//outÀº Å¬¶óÀÌ¾ğÆ®·Î ³»·Áº¸³»¶ó´Â ¶æ
+	out.print("<table border='2'>"); 
+	out.print("<tr>");
+	out.print("<th> ÇĞ¹ø </th>");
+	out.print("<td>"+ num +"</td>");
+
+	out.print("<tr>");
+	out.print("<th> ÀÌ¸§ </th>");
+	out.print("<td>" + name + "</td>");
+
+	out.print("<tr>");
+	out.print("<th> ¼ºº° </th>");
+	out.print("<td>" + gender + "</td>");
+	*/
+
+%>
+
+
+
+
+<table border="2">
+	<tr>
+		<th> ÇĞ¹ø </th>
+		<td><% out.print(num); %></td>
+	
+	<tr>
+		<th> ÀÌ¸§ </th>
+		<!-- <a href = ¸µÅ© °É °÷> °É °÷ ÀÌ¸§ </a> -->
+		<td><a href = "<%= url %>"><%= name %></a></td>
+	
+	<tr>
+		<th> ¼ºº° </th>
+		<td><% 
+				if(gender==null){
+					out.print("¼ºº°À» ¼±ÅÃÇÏÁö ¾Ê¾Ò½À´Ï´Ù."); 
+				}else if(gender.equals("M")){
+					out.print("³²ÀÚ");
+				}else if(gender.equals("F")){
+					out.print("¿©ÀÚ");
+				}
+		%></td>
+		
 </table>
+
 </body>
 </html>
