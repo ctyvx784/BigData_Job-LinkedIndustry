@@ -39,7 +39,11 @@
    out.print("</tr>");
    out.print("</table>");   
 %>
+<%
 
+
+
+%>
 <body bgcolor = "<% out.print(color); %>">
 <table border="1">
 <tr>

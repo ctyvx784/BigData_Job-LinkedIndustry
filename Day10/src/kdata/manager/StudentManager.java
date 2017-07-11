@@ -77,7 +77,7 @@ import java.util.Map;
 			try {
 				//DB서버 연결
 				con = DBUtil.getConnection();
-				String sql = "select * from student where sname = ?";
+				String sql = "select * from student where stu_name = ?";
 				//3. Statement 객체 생성
 				pstmt = con.prepareStatement(sql);
 				
