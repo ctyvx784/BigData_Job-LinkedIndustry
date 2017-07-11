@@ -14,7 +14,7 @@ public class DBUtil {
 	 */
 	// 상수는 반드시 초기화 시켜야
 	private static final String CON_URL = "jdbc:oracle:thin:@localhost:1521:DBSERVER";
-	private static final String USER_ID = "rladkdlwkd";
+	private static final String USER_ID = "test";
 	private static final String USER_PASSWD = "1234";
 	private static final String DRIVER_NAME = "oracle.jdbc.driver.OracleDriver";
 	
