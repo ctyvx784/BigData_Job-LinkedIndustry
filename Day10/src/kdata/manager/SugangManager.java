@@ -20,8 +20,8 @@ public class SugangManager {
 		try {
 		//2. DB서버 연결
 		con = DBUtil.getConnection();
-		String sql = "insert into sign (sign_num, sign_code, sign_grade)"
-				+ "values(?,?,'0')";
+		String sql = "insert into sign (sign_num, sign_code, sign_grade, sign_date)"
+				+ "values(?,?,'0', default)";
 		
 		
 		// 3. Statement 객체 생성
@@ -84,7 +84,10 @@ public class SugangManager {
 			
 			try {
 				con = DBUtil.getConnection();
-				String sql = "select * from sign";
+				String sql = "select student.STU_NUM, student.STU_NAME, SUBJECT.SUB_NAME, sign.SIGN_GRADE from sign"
+						+ " right join student on sign.SIGN_NUM = student.stu_num"
+						+ " left join SUBJECT on SUBJECT.SUB_CODE = sign.SIGN_CODE";
+				
 				//3. Statement 객체 생성
 				pstmt = con.prepareStatement(sql);
 					
@@ -92,11 +95,11 @@ public class SugangManager {
 				rs = pstmt.executeQuery();
 				
 				while(rs.next()) {
-					Sugang sg = new Sugang(rs.getString("sign_num"),
-					rs.getString("sign_code"),
-					rs.getInt(3),
-					rs.getDate(4));
-					list.add(sg);
+					Sugang sg = new Sugang(rs.getString("stu_num"),
+						rs.getString("stu_name"),
+						rs.getString("sub_name"),
+						rs.getInt("sign_grade"));
+						list.add(sg);
 				}
 				
 			}finally {

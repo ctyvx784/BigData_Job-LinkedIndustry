@@ -43,6 +43,14 @@ public class Sugang {
 
 
 
+	public Sugang(String stuNum, String stuName, String subName, int grade) {
+		this.stuId = stuNum;
+		this.sName = stuName;
+		this.subName = subName;
+		this.grade = grade;
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getStuId() {
 		return stuId;
 	}
