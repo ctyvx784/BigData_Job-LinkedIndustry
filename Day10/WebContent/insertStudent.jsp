@@ -21,7 +21,6 @@ insertStudent.jsp <br>
 	
 	Student s = new Student(num,name,gender);
 	
-	
 	int result=0;
 	result = mg.insert(s);
 	
