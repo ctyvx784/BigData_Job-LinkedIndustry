@@ -10,9 +10,15 @@
 b { background-color:cyan}							/* 태그 선택자 { 속성:값} <<인라인 */
 .cla { color:red}									/* class 선택자 { 속성:값} */
 #ccc { color:greenyellow}							/* id 선택자 { 속성:값} */
-[type=text] { background-color:gold}				/* 속성 선택자 { 속성:값} */
+[type=text] { background-color:gold; border-style:dashed; border-width:10px; border-color:red}		/* 속성 선택자 { 속성:값} */
+[type=text]:focus { background-color:LawnGreen}		/* focus 상태의 배경색 */
 [type=password] {background-color:indigo}
-
+[type=password]:hover {background-color:LightSkyBlue}	/* hover 상태의 배경색 */
+a:link { text-decoration:none; color:MidnightBlue }		/* 링크의 밑줄제거 */
+a:visited { text-decoration:none; color:Fuchsia}		/* 방문후에도 링크의 밑줄제거 */
+a:hover { text-decoration:underline; color:green}
+p:first-letter { border-style:dashed; border-width:3px; border-radius:10px; color:gold}
+.cla:first-letter { border-style:groove; border-width:4px; border-radius:9px; color:SaddleBrown}
 </style>
 </head>
 <body>
@@ -24,5 +30,7 @@ b { background-color:cyan}							/* 태그 선택자 { 속성:값} <<인라인 *
 
 <input type="text">
 <input type="password">
+
+<a href="http://www.naver.com">네이버</a>
 </body>
 </html>
