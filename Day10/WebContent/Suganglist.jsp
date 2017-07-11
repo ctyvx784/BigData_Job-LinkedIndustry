@@ -33,8 +33,8 @@
 	<tr>
 		<td> <%= s.getStuId() %></td>
 		<td><a href="selectone.jsp?name=<%=s.getsName()%>"><%= s.getsName() %></a></td>
-		<td> <%= list.get(i).getSubName() %></td>
-		<td> <%= list.get(i).getGrade() %></td>
+		<td> <%= s.getSubName() %></td>
+		<td> <%= s.getGrade() %></td>
 	</tr>
 	<%	
 	}	
