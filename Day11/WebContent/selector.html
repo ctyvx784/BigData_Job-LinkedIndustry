@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계층구조</title>
+<!-- 외부의 css 파일을 가져올때1			type=대분류/소분류		파일링크 -->
+<!-- <link rel="stylesheet" type="text/css" href="selector.css"> -->
+<style>
+/* 	외부의 css 파일을 가져올때2 */
+	@import url("./css/selector.css")
+</style>
+</head>
+<body>
+	<div>
+		<span>좋아하는 음식</span>
+		<ul class="text">
+			<li>피자</li>
+			<li><span>파스타</span></li>
+		</ul>
+		
+		<span>싫어하는 음식</span>
+		<ul>
+			<li id="aaa">햄버거</li>
+			<li><span>콩국수</span></li>
+		</ul>
+	</div>
+</body>
+</html>

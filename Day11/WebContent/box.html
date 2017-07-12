@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {border-top-style:solid;width:200px;padding:20px;margin:250px;}
+/* span {display:block;border-style:solid;width:200px;padding:20px;} */
+span {border-style:solid;padding:50px;margin:150px;}
+
+#menu {background-color:green;width:300px}
+#menu > li {display:inline}
+
+#food {background-color:gold;width:300px}
+#food > li {display:inline-block; width:300px}
+
+li>a:link{text-decoration:none;color:MidnightBlue}
+li>a:visited { text-decoration:none; color:Fuchsia}
+li>a:hover { text-decoration:underline; color:green}
+</style>
+</head>
+<body>
+	<div>div</div>		<!-- blcok -->
+	<span>span</span>	<!-- inline -->
+	<a href="http://www.naver.com">홈으로 이동</a>
+	
+	<ul id="menu">
+		<li><a href="http://www.naver.com">메일</a>
+		<li>카페
+		<li>블로그
+	</ul>
+	
+	<ul id="food">
+		<li>피자
+		<li>파스타
+	</ul>
+</body>
+</html>

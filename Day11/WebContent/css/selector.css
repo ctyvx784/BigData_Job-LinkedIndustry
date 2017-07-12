@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+/* * { color:red} */
+
+/* div span {color:blue} */
+/* div span {color:red} */
+
+/* .text > li {color:orange} */
+/* #aaa + li {color:gold} */
+#aaa ~ li {color:brown}
