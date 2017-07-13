@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복문 함수 each</title>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+	$(function(){
+		//var a= ["손나은1","손나은2","손나은3","손나은4"];
+		
+		var a=[{num:1, name:"손나은"},{num:2, name:"제니"}];
+		
+		//console.log(a.length);
+		
+		/* for(var i=0;i<a.length;i++)
+			console.log(a[i])  */
+			
+		$.each(a, function(index, item){
+			console.log(item.name)
+			$("span").append("<li>"+item.name+"</li>")
+		}) 
+		
+		$("li").each(function(index, item){
+			//console.log(item);
+			//console.log($(item));
+			$(item).css("color","red");
+		})
+	})
+</script>
+</head>
+<body>
+	<input type="button" value="버튼">
+	<ul>
+		<li>1
+		<li>2
+		<li>3
+		<li>4
+	</ul>
+	<span>객체표시</span>
+</body>
+</html>

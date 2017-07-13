@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체</title>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+	$("#bt").click(function(){
+		/* 메서드 text와 html은 내용이 set(덮어쓰기)으로 자식이 들어간다 */
+		//$("div").html("<h1>html()</h1>")
+		
+		//$("div").append("<h1>html()</h1>")
+		//$("div").prepend("<h1>html()</h1>")
+		//$("<h1>prependTo()</h1>").prependTo("div");
+		//$("<h1>appendTo()</h1>").appendTo("div");
+		//$("div").before("<h1>before()</h1>");
+		//$("div").after("<h1>after()</h1>");
+		
+		//$("div").find("ol").append("<li><h1>hello</h1></li>");
+		$("div").find("ol").append("<li>"+ $("#txt").val()+"</li>");
+
+	})
+	
+});
+
+</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="DOM 테스트" id="bt">
+	<div>
+		<ul></ul>
+		<ol></ol>
+	</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+   /* $(documnet).ready( function(){
+      alert("ggg");
+   } ); */
+   
+   /* jQuery(function() {
+      alert("ggg");
+   }); */
+   
+   $(function(){
+      
+      /* $("*").css("color", "red");
+      $("#hi").css("color", "red");
+      $("[type='text']")
+         .css("border-style", "solid")
+         .css("border-color", "red")
+      $("ol > li").parent().parent().css("color", "red"); */
+      /* $("ol > li").parent().parent().find("p").css("color", "red"); */ /* 선택자의 자식들중 찾는것 */
+      
+      /* $("ol > li:even").css("color", "red") */
+      $("ol > li").filter(":odd").css("color", "red");	/* 선택자의 같은레벨에서 찾는것 */
+
+   });
+   
+   
+   
+
+</script>
+
+</head>
+<body>
+
+   <h1> 안녕하세요 </h1>
+   <h1 id = "hi"> 안녕하세요 </h1>
+   <p> 안녕하세요 </p>
+   
+   <input type = "text">
+   <input type = "password">
+   
+   <ul>
+      <li> 피자
+      <li> 파스타
+   </ul>
+   
+   <ol>
+      <li> 피자
+      <li> 파스타
+   </ol>
+   
+</body>
+</html>

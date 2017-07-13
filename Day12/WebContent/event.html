@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼이벤트처리</title>
+<style>
+#txt {color:red}
+</style>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script>
+$(function() {
+	//alert("gg");
+	/* $("#btn").on("click", function() {
+		alert("버튼 클릭 성공");
+		
+	} ); */
+	$("#btn").click(function() {
+		//$("#txt").val("버튼내용");
+		//alert($("#txt").val());
+		//$("span").text( $("#txt").val() );
+		//$("span").html("<h1>" + $("#txt").val() + "</h1>");
+		
+		//this가 가리키는 부분은 body의 3번째줄. prev는 이전 객체,next는 다음 객체, parent는 부모 객체인 body를 가리킨다
+		//console.log($(this).prev().prev().next());
+		//$(this).prev().prev().next().css("color","red");
+		//$("#txt2").val($("#txt").val());
+		var a = $(this).prev().prev().prev().val();
+		var b = $(this).prev().prev().val();
+		$(this).next().html("<h1>" + (a-b) + "</h1>");
+	} );
+
+});
+</script>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="text" id="txt2">
+	<span>멋진 아이디네여</span>
+	<input type="button" value="이벤트 연습" id="btn"><span></span>
+</body>
+</html>
