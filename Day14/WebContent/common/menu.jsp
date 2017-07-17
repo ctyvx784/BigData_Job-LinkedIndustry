@@ -8,7 +8,7 @@
 </head>
 <body>
 	<ul>
-		<li><a href="register.jsp">회원가입</a></li>
+		<li><a href="/Day14/user/register.jsp">회원가입</a></li> <!-- 웹 상의 절대 경로 -->
 		<li><a href="login.jsp">로그인</a></li>
 		<!-- 바로 데이터베이스 접근하는것이므로 DAO가 있는 kdata에 가야한다. -->
 		<li><a href="list.kdata">회원리스트</a></li>
