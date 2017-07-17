@@ -8,17 +8,11 @@
 </head>
 <body>
 <%
-	String id = request.getParameter("id");
-	String pw = request.getParameter("pw");
+	//session.removeAttribute("id");
+	//session.removeAttribute("name");
 	
-	if(id.equals("test") && pw.equals("1234")){
-		session.setAttribute("id", id);
-		session.setAttribute("name", "강영선");
-		/* 페이지 이동 */
-		response.sendRedirect("Main.jsp");
-	}
-	else
-		response.sendRedirect("login.html");
+	session.invalidate();
+	response.sendRedirect("Main.jsp");
 %>
 </body>
 </html>

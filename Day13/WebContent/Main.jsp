@@ -7,6 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%
+		String id =(String) session.getAttribute("id");
+		String name =(String) session.getAttribute("name");
+		
+		if(id == null || name == null){
+			response.sendRedirect("login.html");	
+		}
+		else{
+		out.print("("+id+")님 환영합니다.<br>");
+		out.print("("+name+")님 환영합니다.");
+		}
+	%>
+<a href="logout.jsp">로그아웃</a>
 </body>
 </html>
