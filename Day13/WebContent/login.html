@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인form페이지</title>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+	$(function(){
+		$("#form1").submit(function(event){
+			if($("#id").val() == ""){
+				alert("아이디를 입력하세요");
+				event.preventDefault();
+			}else if($("#pw").val() == ""){
+				alert("비밀번호를 입력하세요");
+				event.preventDefault();
+			}else
+				$("#form1").submit();
+		});
+		
+		$("#form2").submit(function(event){
+			if($("#id2").val() == ""){
+				alert("아이디를 입력하세요");
+				event.preventDefault();
+			}else if($("#pw2").val() == ""){
+				alert("비밀번호를 입력하세요");
+				event.preventDefault();
+			}else
+				$("#form2").submit();
+		});
+	});
+</script>
+</head>
+<body>
+	<form action="login" method="get" id="form1">
+		<h3>Servelet</h3>
+		<ul>
+			<li>아이디: <input type="text" name="id" id="id"></li>
+			<li>비밀번호: <input type="text" name="pw" id="pw"></li>
+		</ul>
+		<input type="submit" value="로그인">
+	</form>
+	
+	<form action="Login.jsp" id="form2">
+		<h3>jsp</h3>
+		<ul>
+			<li>아이디: <input type="text" name="id" id="id2"></li>
+			<li>비밀번호: <input type="text" name="pw" id="pw2"></li>
+		</ul>
+		<input type="submit" value="로그인">
+	</form>
+</body>
+</html>

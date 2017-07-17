@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+	$(function(){
+		$("#form1").submit(function(event){
+			if($("#id").val() == ""){
+				alert("아이디를 입력하세요");
+				event.preventDefault();
+			}else if($("#pw").val() == ""){
+				alert("비밀번호를 입력하세요");
+				event.preventDefault();
+			}else
+				$("#form1").submit();
+		});
+	});
+</script>
+</head>
+<body>
+	<form action="login.lny" method="get" id="form1">
+		<h3>Servelet</h3>
+		<ul>
+			<li>아이디: <input type="text" name="id" id="id"></li>
+			<li>비밀번호: <input type="text" name="pw" id="pw"></li>
+		</ul>
+		<input type="submit" value="로그인">
+	</form>
+	
+	<form action="login.lny">
+		<h3>jsp</h3>
+		<ul>
+			<li>아이디: <input type="text" name="id"></li>
+			<li>비밀번호: <input type="text" name="pw"></li>
+		</ul>
+		<input type="submit" value="로그인">
+	</form>
+</body>
+</html>
