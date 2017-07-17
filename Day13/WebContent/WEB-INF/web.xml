@@ -9,16 +9,4 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- <servlet>
-   클래스에 대한 별칭을 주는 것 
-  	<servlet-name>first</servlet-name>
-  	
-  	<servlet-class>kdata.servlet.MyServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>first</servlet-name>
-  	<url-pattern>/test.ly</url-pattern>
-  </servlet-mapping> -->
 </web-app>
