@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kdata.project.service.NextPage;
+import kdata.project.service.UserRegisterService;
 import kdata.project.service.UserService;
 
 /**
@@ -28,11 +30,12 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//1. URL 별 분기------------------------------------------------
 		System.out.println("User Servlet");
 		
 		String uri = request.getRequestURI();
 		String path = request.getContextPath();
-		
 		//path.length();
 		String cmd = uri.substring(path.length() + 1);
 		
@@ -41,9 +44,12 @@ public class UserServlet extends HttpServlet {
 		System.out.println(cmd);
 		
 		UserService service = null;
+		NextPage nextPage = null;
 		//회원가입
 		if(cmd.equals("register.kdata")){
 			System.out.println("회원가입");
+			service = new UserRegisterService();
+			nextPage = service.execute(request, response);
 		}
 		//회원정보조회
 		else if(cmd.equals("list.kdata")){
@@ -64,6 +70,18 @@ public class UserServlet extends HttpServlet {
 		//회원 로그아웃
 		else if(cmd.equals("logout.kdata")){
 			System.out.println("로그아웃페이지");
+		}
+		
+		//2. 다음 페이지 이동-------------------------------
+		if(nextPage == null){
+			System.out.println("반환값 확인");
+		}else{
+			if(nextPage.isRedriect()){
+				response.sendRedirect(nextPage.getPageName());
+			}
+			else{
+				request.getRequestDispatcher(nextPage.getPageName()).forward(request, response);
+			}
 		}
 	}
 
