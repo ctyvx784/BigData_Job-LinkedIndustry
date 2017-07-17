@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/main.serv")
+@WebServlet("/main")
 public class MainServelet {
 
 	private static final long serialVersionUID = 1L;
@@ -46,7 +46,7 @@ public class MainServelet {
 		else{
 			out.print("("+id+")님 환영합니다.<br>");
 			out.print("("+name+")님 환영합니다.");
-			out.print("<a href='logout.serv'>로그아웃</a>");
+			out.print("<a href='logout'>로그아웃</a>");
 		}
 		
 	}
