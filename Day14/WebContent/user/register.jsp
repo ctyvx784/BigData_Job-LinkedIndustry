@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="../common/menu.jsp" %>
+
 회원가입 - register.jsp
 <form action="../register.kdata">
 	<ul>
