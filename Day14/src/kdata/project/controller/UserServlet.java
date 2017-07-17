@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kdata.project.service.UserService;
+
 /**
  * Servlet implementation class UserServlet
  */
@@ -38,6 +40,7 @@ public class UserServlet extends HttpServlet {
 		//System.out.println(path);
 		System.out.println(cmd);
 		
+		UserService service = null;
 		//회원가입
 		if(cmd.equals("register.kdata")){
 			System.out.println("회원가입");
