@@ -13,19 +13,24 @@ public class UserDTO implements Serializable {
 	private String pw;
 	private String name;
 	private String profile;
-	private Date regDate;
-	
+	private Date refDate;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getPw() {
 		return pw;
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public String getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getProfile() {
 		return profile;
@@ -33,24 +38,18 @@ public class UserDTO implements Serializable {
 	public void setProfile(String profile) {
 		this.profile = profile;
 	}
-	public Date getRegDate() {
-		return regDate;
+	public Date getRefDate() {
+		return refDate;
 	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setRefDate(Date refDate) {
+		this.refDate = refDate;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getName() {
-		return name;
-	}
-	public UserDTO(String id, String name, String profile, Date regDate) {
+	public UserDTO(String id, String name, String profile, Date refDate) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.profile = profile;
-		this.regDate = regDate;
+		this.refDate = refDate;
 	}
 	public UserDTO(String id, String pw, String name, String profile) {
 		super();
@@ -59,6 +58,11 @@ public class UserDTO implements Serializable {
 		this.name = name;
 		this.profile = profile;
 	}
+	public UserDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 }
 	
