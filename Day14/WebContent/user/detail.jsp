@@ -23,7 +23,7 @@
 			<tr>
 				<td><%=user.getId() %></td>
 				<td><%=user.getName()%></td>
-				<td><%=user.getProfile()%></td>
+				<td><img src="./profile/<%=user.getProfile()%>"></td>
 				<td><%=user.getRefDate()%></td>
 			</tr>
 		</table>
@@ -40,7 +40,7 @@
 				<!-- el에서는 getAttribute로 받은 변수를 사용한다. -->
 				<td>${user.id }</td>
 				<td>${user.name }</td>
-				<td>${user.profile }</td>
+				<td> <img src="./profile/${requestScope.user.profile }"></td>
 				<td>${user.refDate }</td>
 			</tr>
 		</table>

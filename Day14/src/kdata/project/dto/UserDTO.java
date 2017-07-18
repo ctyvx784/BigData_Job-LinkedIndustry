@@ -61,6 +61,11 @@ public class UserDTO implements Serializable {
 	public UserDTO() {
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		return "UserDTO [id=" + id + ", pw=" + pw + ", name=" + name + ", profile=" + profile + ", refDate=" + refDate
+				+ "]";
+	}
 	
 	
 	

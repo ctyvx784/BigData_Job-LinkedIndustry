@@ -23,7 +23,7 @@ public class UserDetailService implements UserService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		user.toString();
+		System.out.println(user.toString());
 		request.setAttribute("user", user);
 
 		NextPage nextPage = new NextPage();

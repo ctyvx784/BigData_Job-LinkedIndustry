@@ -11,12 +11,12 @@
 </style>
 </head>
 <body>
-<%@ include file="../common/menu.jsp" %>
 
 회원가입 - register.jsp
 <form action="../register.kdata">
 	<ul>
-		<li>아이디: <input type="text" name="id" value="test"></li>
+		<li>아이디: <input type="text" name="id" value="test">
+					<input type="button" value="중복확인"></li>
 		<li>비밀번호: <input type="password" name="pw" value="1234"></li>
 		<li>이름: <input type="text" name="name" value="홍길동"></li>
 		<li>프로필 사진: <input type="file" name="file"></li>
