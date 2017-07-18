@@ -19,13 +19,16 @@ public class UserRegisterService implements UserService {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
-		String fileName = null;
+		String profile = request.getParameter("profile");
+		
+		System.out.println(id);
+		int result = 0;
 		//2. DB 처리(DAO 메소드 호출)
 		/*UserDAO dao = UserDAO.getInstance();
 		dao.insert();*/
-		UserDTO user = new UserDTO(id, pw, name, fileName);
+		UserDTO user = new UserDTO(id, pw, name, profile);
 		try {
-			UserDAO.getInstance().insert(user);
+			result = UserDAO.getInstance().insert(user);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -34,7 +37,6 @@ public class UserRegisterService implements UserService {
 		
 		//4. 이동할 다음 페이지 처리
 		NextPage nextPage = new NextPage();
-		int result = 0;
 		//회원가입 성공
 		if(result !=0){
 			nextPage.setPageName("./user/login.jsp");
@@ -42,7 +44,9 @@ public class UserRegisterService implements UserService {
 		}
 		//회원가입 실패
 		else{
-			
+			request.setAttribute("errorMsg", "회원가입에 실패했습니다.");
+			nextPage.setPageName("./errors/error.jsp");
+			nextPage.setRedriect(false);
 		}
 		return nextPage;
 	}
