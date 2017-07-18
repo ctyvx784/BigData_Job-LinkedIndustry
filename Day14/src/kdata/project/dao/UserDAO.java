@@ -2,7 +2,10 @@ package kdata.project.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import kdata.project.dto.UserDTO;
 import kdata.project.util.DBUtil;
@@ -24,13 +27,12 @@ public class UserDAO {
 		
 		try {
 			con = DBUtil.getConnection();
-			String sql = "insert into users values(?,?,?,?,deafult)";
+			String sql = "insert into users values(?,?,?,null,deafult)";
 			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPw());
 			pstmt.setString(3, user.getName());
-			pstmt.setString(4, "null");
 			
 			result=pstmt.executeUpdate();
 			
@@ -43,8 +45,32 @@ public class UserDAO {
 		return result;
 	}
 	//회원 리스트
-	public void selectAll(){
+	public List<UserDTO> selectAll(){
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<UserDTO> list = new ArrayList<>();
 		
+		try {
+			con = DBUtil.getConnection();
+			String sql = "select * from users";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				UserDTO user = new UserDTO(rs.getString("id"),
+						rs.getString("name"),
+						rs.getString("profile"),
+						rs.getDate("ref_date"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 	//회원 상세정보
 	public void selectById(){
