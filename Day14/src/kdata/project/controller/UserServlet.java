@@ -33,7 +33,7 @@ public class UserServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//1. URL 별 분기------------------------------------------------
-		System.out.println("User Servlet");
+		System.out.println("1.User Servlet");
 		
 		String uri = request.getRequestURI();
 		String path = request.getContextPath();

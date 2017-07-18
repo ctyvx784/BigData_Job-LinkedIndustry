@@ -11,7 +11,7 @@ public class UserDAO {
 	//----------------------------------------------
 	// 회원 가입
 	public void insert(){
-		
+		System.out.println("3.UserDAO insert()");
 	}
 	//회원 리스트
 	public void selectAll(){
