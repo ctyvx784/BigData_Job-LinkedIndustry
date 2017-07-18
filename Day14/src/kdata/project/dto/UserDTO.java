@@ -13,7 +13,8 @@ public class UserDTO implements Serializable {
 	 */
 	private static final long serialVersionUID = -4226137163490842665L;
 
-	public UserDTO(){};
+	public UserDTO(String id, String name, String filename, Date date){};
+	public UserDTO(String id, String pw, String name, String filename){};
 	
 	private String id,pw,name,fileName;
 	private Date regDate;
