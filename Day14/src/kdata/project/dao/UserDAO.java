@@ -80,8 +80,33 @@ public class UserDAO {
 	}
 
 	// 회원 상세정보
-	public void selectById() {
-
+	public UserDTO selectById(String id) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		UserDTO user = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql = "select * from users where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+				user = new UserDTO(rs.getString("id"),
+						rs.getString("name"),
+						rs.getString("profile"),
+						rs.getDate("ref_date"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally{
+			DBUtil.close(con, pstmt, rs);
+		}
+		
+		return user;
 	}
 
 	// 로그인
