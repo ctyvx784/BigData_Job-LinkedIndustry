@@ -62,7 +62,7 @@ public class UserServlet extends HttpServlet {
 		}
 		//회원정보상세조회
 		else if(cmd.equals("detail.kdata")){
-			System.out.println("회원상제페이지");
+			System.out.println("회원정보상세조회");
 			service = new UserDetailService();
 			nextPage = service.execute(request, response);
 		}
