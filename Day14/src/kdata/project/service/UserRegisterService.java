@@ -3,6 +3,8 @@ package kdata.project.service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kdata.project.dao.UserDAO;
+
 public class UserRegisterService implements UserService {
 
 	@Override
@@ -14,7 +16,7 @@ public class UserRegisterService implements UserService {
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		//2. DB 처리(DAO 메소드 호출)
-		
+		UserDAO dao = new UserDAO();
 		//3. DB 결과 처리
 		
 		//4. 이동할 다음 페이지 처리
