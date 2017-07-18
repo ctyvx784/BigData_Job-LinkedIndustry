@@ -1,6 +1,14 @@
 package kdata.project.dao;
 
 public class UserDAO {
+	//싱글턴 패턴--------------------------------------
+	private static UserDAO dao = new UserDAO();
+	private UserDAO(){}
+	
+	public static UserDAO getInstance(){
+		return dao;
+	}
+	//----------------------------------------------
 	// 회원 가입
 	public void insert(){
 		
