@@ -14,7 +14,7 @@
 <body>
 
 	회원 리스트 -list.jsp
-	<form action="../register.kdata">
+	<form action="../list.kdata">
 		<%
 			List<UserDTO> list = (List<UserDTO>) request.getAttribute("list");
 			out.println(list);
@@ -33,7 +33,7 @@
 				<td><%=user.getId()%></td>
 				<td><%=user.getName()%></td>
 				<td><%=user.getProfile()%></td>
-				<td><%=user.getRegDate()%></td>
+				<td><%=user.getRefDate()%></td>
 
 			</tr>
 			<%
@@ -52,7 +52,7 @@
 				<td><a href="detail.kdata?id=${user.id }">${user.id }</a></td>
 				<td> ${user.name }</td>
 				<td> ${user.profile }</td>
-				<td> ${user.regDate }</td>
+				<td> ${user.refDate }</td>
 			</tr>
 		</c:forEach>
 		</table>
