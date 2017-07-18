@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kdata.project.service.NextPage;
+import kdata.project.service.UserDetailService;
 import kdata.project.service.UserListService;
 import kdata.project.service.UserRegisterService;
 import kdata.project.service.UserService;
@@ -62,6 +63,8 @@ public class UserServlet extends HttpServlet {
 		//회원정보상세조회
 		else if(cmd.equals("detail.kdata")){
 			System.out.println("회원상제페이지");
+			service = new UserDetailService();
+			nextPage = service.execute(request, response);
 		}
 		//회원정보삭제
 		else if(cmd.equals("delete.kdata")){
