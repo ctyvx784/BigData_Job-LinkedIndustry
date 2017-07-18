@@ -19,4 +19,9 @@ public class NextPage {
 	public void setRedriect(boolean isRedriect) {
 		this.isRedriect = isRedriect;
 	}
+	@Override
+	public String toString() {
+		return "NextPage [pageName=" + pageName + ", isRedriect=" + isRedriect + "]";
+	}
+	
 }
