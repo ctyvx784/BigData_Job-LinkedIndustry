@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <h1>Error</h1>
+<hr>
+<%= request.getAttribute("errorMsg") %>
+<!-- el로변환시킨 메세지 -->
+${requestScope.errorMsg}
+${errorMsg}
 </body>
 </html>
