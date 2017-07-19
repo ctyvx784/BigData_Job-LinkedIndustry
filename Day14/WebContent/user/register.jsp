@@ -27,7 +27,7 @@ li {display
 					//console.log("success");
 					//console.log(data);
 					if(data==0)
-						$("#msg").html("중복");
+						$("#msg").html("중복").css("color","red");
 					else
 						$("#msg").html("사용가능");
 				},
