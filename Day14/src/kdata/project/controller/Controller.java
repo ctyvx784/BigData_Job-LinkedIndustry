@@ -77,11 +77,10 @@ public class Controller extends HttpServlet {
       String url = request.getRequestURI();
       int cmdIdx = url.lastIndexOf("/")+1;
       String cmd = url.substring(cmdIdx);
-      //System.out.println("1번");
-      System.out.println(cmd);
+      System.out.println("1.doGet들어옴");
+      //System.out.println(cmd);
       
       UserService service = map.get(cmd);
-      service.execute(request, response);
       
       NextPage nextPage = service.execute(request, response);
       
