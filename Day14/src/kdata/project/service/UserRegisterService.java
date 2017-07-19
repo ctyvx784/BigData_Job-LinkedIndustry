@@ -13,7 +13,11 @@ public class UserRegisterService implements UserService {
 	@Override
 	public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		//1.요청 파라미터 처리
+		System.out.println("2.UserRegisterService");
+		
+		String path = request.getServletContext().getRealPath("profile");
+		System.out.println(path);
+		/*//1.요청 파라미터 처리
 		//jsp에서 input의 name에 들어간 값을 가져온다.
 		System.out.println("2.UserRegisterService");
 		String id = request.getParameter("id");
@@ -24,8 +28,8 @@ public class UserRegisterService implements UserService {
 		System.out.println(id);
 		int result = 0;
 		//2. DB 처리(DAO 메소드 호출)
-		/*UserDAO dao = UserDAO.getInstance();
-		dao.insert();*/
+		UserDAO dao = UserDAO.getInstance();
+		dao.insert();
 		UserDTO user = new UserDTO(id, pw, name, profile);
 		try {
 			result = UserDAO.getInstance().insert(user);
@@ -48,7 +52,8 @@ public class UserRegisterService implements UserService {
 			nextPage.setPageName("./errors/error.jsp");
 			nextPage.setRedriect(false);
 		}
-		return nextPage;
+		return nextPage;*/
+		return null;
 	}
 
 }
