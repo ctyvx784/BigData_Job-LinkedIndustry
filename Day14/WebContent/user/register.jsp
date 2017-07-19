@@ -25,7 +25,7 @@ li {display
 				dataType : "text",	//text,json,xml을 가져올수 있다.
 				success : function(data){
 					//console.log("success");
-					//console.log(data);
+					console.log(data);
 					if(data==0)
 						$("#msg").html("중복").css("color","red");
 					else
