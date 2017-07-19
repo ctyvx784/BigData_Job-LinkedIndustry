@@ -20,8 +20,33 @@ public class UserDAO {
 	public static UserDAO getInstance() {
 		return dao;
 	}
-
 	// ----------------------------------------------
+	
+	//중복검사
+	public int idCheck(String id) throws SQLException{
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con=DBUtil.getConnection();
+			String sql = "select * from users where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			//사용불가
+			if(rs.next()){
+				return 0;
+			}
+			//사용가능
+			else{
+				return 1;
+			}
+		} finally{
+			DBUtil.close(con, pstmt, rs);
+		}
+
+	}
 	// 회원 가입
 	public int insert(UserDTO user) throws SQLException {
 		Connection con = null;
