@@ -38,3 +38,7 @@ id					varchar2(20),
 write_date			date		default sysdate,
 num					number	references	board(num)  
 )
+
+create sequence comments_seq
+	start with 1
+	increment by 1
