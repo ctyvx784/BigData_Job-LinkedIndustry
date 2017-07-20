@@ -46,7 +46,7 @@ li {display
 
 	회원가입 - register.jsp
 	<form action="../register.kdata" method="post"
-		enctype="multipart/form-dat">
+		enctype="multipart/form-data">
 		<ul>
 			<li>아이디: <input type="text" name="id" value="test" id="id">
 						<input type="button" value="중복확인" id="idcheck">
