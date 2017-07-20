@@ -29,3 +29,5 @@ values(board_seq.nextval,'test','수학','테스트',default,default)
 
 insert into board
 values(board_seq.nextval,'test','과학','테스트',default,default)
+
+select * from board
