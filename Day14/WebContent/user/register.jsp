@@ -26,9 +26,11 @@ li {display
 				success : function(data){
 					//console.log("success");
 					console.log(data);
-					if(data==0)
+					if(data == 0)
+						//alert("중복된 아이디입니다.");
 						$("#msg").html("중복").css("color","red");
 					else
+						//alert("사용가능한 아이디입니다.");
 						$("#msg").html("사용가능");
 				},
 				error : function () {
@@ -43,10 +45,12 @@ li {display
 <body>
 
 	회원가입 - register.jsp
-	<form action="../register.kdata" method="post" enctype="multipart/form-dat">
+	<form action="../register.kdata" method="post"
+		enctype="multipart/form-dat">
 		<ul>
-			<li>아이디: <input type="text" name="id" value="test" id="id"> <input
-				type="button" value="중복확인" id="idcheck"></li>
+			<li>아이디: <input type="text" name="id" value="test" id="id">
+						<input type="button" value="중복확인" id="idcheck">
+						<span id="msg"></span></li>
 			<li>비밀번호: <input type="password" name="pw" value="1234"></li>
 			<li>이름: <input type="text" name="name" value="홍길동"></li>
 			<li>프로필 사진: <input type="file" name="file"></li>
