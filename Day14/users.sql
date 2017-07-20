@@ -10,3 +10,12 @@ create table users(
 select * from users;
 
 insert into USERS(id,pw,name,profile) values('ssd','4321','Á¦´Ï','asd.jpg');
+
+create table board(
+num			number	primary key,
+id			varchar2(10),
+subject		varchar2(10),
+content		varchar2(10),
+write_data	date	default	sysdate,
+read_count	number	default	0
+)
