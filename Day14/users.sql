@@ -31,3 +31,10 @@ insert into board
 values(board_seq.nextval,'test','과학','테스트',default,default)
 
 select * from board
+
+create table comments(
+comment_num			number	primary key,
+id					varchar2(20),
+write_date			date		default sysdate,
+num					number	references	board(num)  
+)
