@@ -91,7 +91,25 @@ public class BoardDAO {
 	}
 
 	// 댓글 삭제
-	public void deleteComments() {
-
+	public int deleteComments(int commentNum) throws SQLException {
+		System.out.println("3. BoardDAO deleteComments()");
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int result=0;
+		
+		try {
+			con=DBUtil.getConnection();
+			String sql="delete from comments where comment_num=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, commentNum);
+			
+			result= pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			DBUtil.close(con, pstmt);
+		}
+		return result;
 	}
 }
