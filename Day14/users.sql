@@ -23,3 +23,9 @@ read_count	number	default	0
 create sequence board_seq
 	start with 1
 	increment by 1
+	
+insert into board
+values(board_seq.nextval,'test','수학','테스트',default,default)
+
+insert into board
+values(board_seq.nextval,'test','과학','테스트',default,default)
