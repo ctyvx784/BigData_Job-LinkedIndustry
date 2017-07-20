@@ -19,3 +19,7 @@ content		varchar2(10),
 write_data	date	default	sysdate,
 read_count	number	default	0
 )
+
+create sequence board_seq
+	start with 1
+	increment by 1
