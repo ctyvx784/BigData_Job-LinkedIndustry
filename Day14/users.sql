@@ -38,7 +38,12 @@ id					varchar2(20),
 write_date			date		default sysdate,
 num					number	references	board(num)  
 )
-
+alter table comments add(content varchar2(1000));
 create sequence comments_seq
 	start with 1
 	increment by 1
+	
+insert into comments
+values(comments_seq.nextval,'제니',default,2,'블랙핑크 멤버');
+
+select*from comments;
